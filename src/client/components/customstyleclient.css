@@ -1,0 +1,234 @@
+@import url('../assets/css/custom.css');
+
+.owl-carousel .owl-nav.disabled,
+.owl-carousel .owl-dots.disabled {
+  display: block;
+}
+
+.best-packages-section .slick-prev,
+.best-packages-section .slick-next {
+  display: none !important;
+}
+
+.test-slider-card .slick-prev {
+  display: none;
+}
+
+.popular-test-section .slick-list .slick-track .slick-slide div {
+  margin-right: 20px;
+}
+
+.about-us-section-fifteen.client-review-twelve .slick-slider {
+  position: static;
+}
+
+.slick-slider.best-package-slider.owl-carousel.slick-initialized
+  .slick-dots
+  li.slick-active
+  button {
+  background: #0092e4;
+  border-radius: 10px !important;
+}
+
+.best-package-slider .slick-list .slick-track .slick-slide div {
+  margin-right: 20px;
+}
+
+.slick-slider.best-package-slider.owl-carousel.slick-initialized
+  .slick-dots
+  li
+  button {
+  width: 32px;
+  height: 6px;
+}
+
+.banner-sec-twelve .css-13cymwt-control {
+  border-width: 0px !important;
+  padding-left: 10px;
+}
+
+.popular-test-section .slick-prev,
+.popular-test-section .slick-next {
+  display: none !important;
+}
+
+.banner-sec-twelve .input-box-twelve .input-block:nth-child(2):before {
+  left: 2px;
+  top: 7px;
+}
+.css-1u9des2-indicatorSeparator {
+  display: none !important;
+}
+.home-pg-twelve.main-wrapper {
+  font-family: "Inter", sans-serif;
+}
+.swiper.swiper-slider-banner {
+  overflow: visible;
+}
+
+.stickybar {
+  top: 0;
+  position: sticky;
+}
+
+.patient-wrap .patient-info img {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.patient-wrap .patient-info .user-patient h6 {
+  font-size: 12px;
+  font-weight: 500;
+  color: #1d7ed8;
+  margin-bottom: 5px;
+}
+.patient-wrap .patient-info {
+  display: flex;
+  /* display: -webkit-flex; */
+  align-items: center;
+  -webkit-align-items: center;
+  margin-bottom: 10px;
+}
+
+.setting-card {
+  border: 1px solid #e2e8f0;
+  margin: 0 0 24px;
+  padding: 24px 24px 9px;
+  border-radius: 10px;
+}
+
+.img-upload .profile-img {
+  width: 120px;
+  height: 120px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+.img-upload .upload-img .change-photo {
+  position: relative;
+  color: #004fff;
+  margin: 0 15px 10px 0;
+  cursor: pointer;
+}
+.img-upload .upload-img .upload-remove {
+  color: #e11d48;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.trash-icon {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e11d48;
+}
+.add-bill,
+.add-prescribe,
+.more-item {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #0e82fd;
+  text-align: right;
+  display: inline-block;
+}
+.collapse:not(.show) {
+  display: none;
+}
+#revenue-chart .apexcharts-series path:nth-child(4) {
+  fill: #fbbf24;
+  stroke: #fbbf24;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.anticon-clock-circle {
+  display: none !important;
+}
+
+.fa-chevron-right:before {
+  content: "\f054";
+}
+.slide-nav-patient {
+  font-size: 18px;
+  color: #1e3259;
+  background: none;
+  text-shadow: none;
+  top: 0;
+  cursor: pointer;
+  border: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 15px;
+  border-radius: 50px;
+}
+.custom-table .table > :not(:first-child) {
+  border-top: none;
+}
+.custom-new-table table > :not(:first-child) {
+  border-top: none;
+}
+.modal {
+  z-index: 9999;
+}
+.swiper-container .swiper-wrapper .slick-slider button {
+  display: none !important;
+}
+
+a {
+  text-decoration: none;
+  color: #2e3842;
+}
+.text-success {
+  color: #00cc52 !important;
+}
+.table-responsive table tbody tr td {
+  border: none;
+}
+.dashboard-widget-box .dash-icon-box i {
+  color: #6b7280;
+}
+ul.pages-links {
+  padding-left: 0;
+}
+.appointment-wrap ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+ul.comments-list {
+  padding-left: 0;
+}
+.bank-details-info ul {
+  padding-left: 0;
+}
+.ant-picker-dropdown {
+  z-index: 9999 !important;
+}
+.register-btn a.btn.reg-btn svg {
+  width: 15px;
+}
+.register-btn a.btn.btn-primary.log-btn svg {
+  width: 15px;
+}
+.slot-body ul.time-slots {
+  padding-left: 0;
+}
+.dropdown-menu.dropdown-menu-end .dropdown-item {
+  font-size: 14px;
+}
+.doctor-info-profile .doctor-name-info h5 a {
+  font-size: 16px;
+}
+.appointment-dash-card.past-appointment .appointment-date-info h4 {
+  font-size: 18px;
+}
