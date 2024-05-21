@@ -13,11 +13,14 @@ import {
 import { toast } from "react-toastify";
 import Loading from "../../../common/loading/index.js";
 
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
+
 const Profile = (props) => {
   const dispatch = useDispatch();
   const profileData = useSelector((state) => state.profileReducer.profileData);
   const isLoading = useSelector((state) => state.profileReducer.isLoading);
-
+  const [value, setValue] = useState();
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
@@ -127,7 +130,12 @@ const Profile = (props) => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0]; // Get the first file from the list of selected files
-
+    const maxSizeInMB = 2;
+    const maxSizeInBytes = maxSizeInMB * 1024 * 1024;
+    if (file && file.size > maxSizeInBytes) {
+      alert(`File size should be less than ${maxSizeInMB}MB`);
+      return;
+    }
     if (file) {
       const reader = new FileReader();
       reader.readAsDataURL(file); // Read the file as a data URL (base64 encoded string)
@@ -166,6 +174,12 @@ const Profile = (props) => {
   const onChanegEmergencyContact = (e, index) => {
     const emergencyContactsValues = [...emargencyContacts];
     emergencyContactsValues[index][e.target.name] = e.target.value;
+    setEmargencyContacts(emergencyContactsValues);
+  };
+
+  const onChanegEmergencyContactPhoneNumber = (e, index) => {
+    const emergencyContactsValues = [...emargencyContacts];
+    emergencyContactsValues[index].phoneNumber = e;
     setEmargencyContacts(emergencyContactsValues);
   };
   console.log("profileData", profileData);
@@ -266,12 +280,19 @@ const Profile = (props) => {
                           <label className="col-form-label">
                             Phone Number <span className="text-danger">*</span>
                           </label>
-                          <input
+                          {/* <input
                             type="tel"
                             className="form-control"
                             name="phoneNumber"
                             value={phoneNumber}
                             onChange={handleOnChange}
+                          /> */}
+                          <PhoneInput
+                            defaultCountry="ua"
+                            value={phoneNumber}
+                            onChange={(phone) =>
+                              setData({ ...data, phoneNumber: phone })
+                            }
                           />
                         </div>
                       </div>
@@ -409,13 +430,12 @@ const Profile = (props) => {
                                 Phone Number{" "}
                                 <span className="text-danger">*</span>
                               </label>
-                              <input
-                                type="text"
-                                className="form-control"
-                                name="phoneNumber"
+
+                              <PhoneInput
+                                defaultCountry="ua"
                                 value={emergencyContact.phoneNumber}
                                 onChange={(e) =>
-                                  onChanegEmergencyContact(e, index)
+                                  onChanegEmergencyContactPhoneNumber(e, index)
                                 }
                               />
                             </div>

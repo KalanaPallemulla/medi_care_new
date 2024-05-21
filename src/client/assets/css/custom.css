@@ -5538,7 +5538,7 @@ th.table-head-days {
 .header .header-nav .logo {
   display: inline-block;
   margin-right: 30px;
-  width: 160px;
+  width: 200px;
 }
 @media (max-width: 1199.98px) {
   .header .header-nav .logo {
@@ -12048,7 +12048,7 @@ html.menu-opened body {
   font-weight: 600;
   font-size: 48px;
   margin-bottom: 25px;
-  color:#111827;
+  color: #111827;
 }
 .banner-content h1 span {
   color: #2c4ca4;
@@ -22692,6 +22692,7 @@ html.menu-opened body {
 .login-btn {
   font-size: 18px;
   font-weight: 500;
+  color: "red";
 }
 
 .login-or {

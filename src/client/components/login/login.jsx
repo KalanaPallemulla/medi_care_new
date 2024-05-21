@@ -105,7 +105,7 @@ const LoginContainer = (props) => {
 
                         <div
                           onClick={handleSubmit}
-                          className="btn w-100 btn-lg login-btn bg-[#339999] text-white"
+                          className="btn w-100 btn-lg login-btn bg-[#339999] text-white hover:border hover:border-[#339999]  hover:bg-[#33999990] "
                           type="submit"
                         >
                           Login

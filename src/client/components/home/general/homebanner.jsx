@@ -37,7 +37,7 @@ function Homebanner() {
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                   </p>
-                  <Link to="/patient/booking1" className="btn">
+                  <Link to="/#" className="btn">
                     Start a Consult
                   </Link>
                   <div className="banner-arrow-img">

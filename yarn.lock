@@ -4730,6 +4730,11 @@ cosmiconfig@^9.0.0:
     js-yaml "^4.1.0"
     parse-json "^5.2.0"
 
+country-flag-icons@^1.5.11:
+  version "1.5.11"
+  resolved "https://registry.yarnpkg.com/country-flag-icons/-/country-flag-icons-1.5.11.tgz#04c0556728e517a6207946656355698ac6237080"
+  integrity sha512-B+mvFywunkRJs270k7kCBjhogvIA0uNn6GAXv6m2cPn3rrwqZzZVr2gBWcz+Cz7OGVWlcbERlYRIX0S6OGr8Bw==
+
 countup.js@^2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/countup.js/-/countup.js-2.8.0.tgz#64951f2df3ede28839413d654d8fef28251c32a8"
@@ -6965,6 +6970,13 @@ inline-style-prefixer@^3.0.8:
     bowser "^1.7.3"
     css-in-js-utils "^2.0.0"
 
+input-format@^0.3.10:
+  version "0.3.10"
+  resolved "https://registry.yarnpkg.com/input-format/-/input-format-0.3.10.tgz#e8a8855e2e89e3b1cd995333f6277c14865f0e35"
+  integrity sha512-5cFv/kOZD7Ch0viprVkuYPDkAU7HBZYBx8QrIpQ6yXUWbAQ0+RQ8IIojDJOf/RO6FDJLL099HDSK2KoVZ2zevg==
+  dependencies:
+    prop-types "^15.8.1"
+
 internal-slot@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/internal-slot/-/internal-slot-1.0.7.tgz#c06dcca3ed874249881007b0a5523b172a190802"
@@ -8090,6 +8102,11 @@ levn@~0.3.0:
   dependencies:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
+
+libphonenumber-js@^1.10.61:
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-1.11.1.tgz#2596683e1876bfee74082bb49339fe0a85ae34f9"
+  integrity sha512-Wze1LPwcnzvcKGcRHFGFECTaLzxOtujwpf924difr5zniyYv1C2PiW0419qDR7m8lKDxsImu5mwxFuXhXpjmvw==
 
 lilconfig@^2.0.3, lilconfig@^2.1.0:
   version "2.1.0"
@@ -10630,6 +10647,11 @@ react-input-mask@^2.0.4:
     invariant "^2.2.4"
     warning "^4.0.2"
 
+react-international-phone@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/react-international-phone/-/react-international-phone-4.3.0.tgz#cb04295b13b5a55f50f36e3c0b7f6c2dc549bb6c"
+  integrity sha512-lIntIkwq2j0m3j4RsRiGJl/buHMLBd+mQ9S9RfiX3KbiUCUtbawoPCV2r8BvyeRMZI0cDtovoukBCuZ+70QzJA==
+
 react-is@^16.12.0, react-is@^16.13.1, react-is@^16.3.2, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -10694,6 +10716,17 @@ react-phone-input-2@^2.15.1:
     lodash.reduce "^4.6.0"
     lodash.startswith "^4.2.1"
     prop-types "^15.7.2"
+
+react-phone-number-input@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/react-phone-number-input/-/react-phone-number-input-3.4.1.tgz#c9a73cace2ac4a7c5fd625e1020baae7607a4d49"
+  integrity sha512-guuenZqU/DYvDBFzFdTrppC4rs+q5ybTFHrxEo9VGvX0pPLWM4ZXlRa0llT7LRAvfxX8RjQNnQkkCiTHTzhLZA==
+  dependencies:
+    classnames "^2.5.1"
+    country-flag-icons "^1.5.11"
+    input-format "^0.3.10"
+    libphonenumber-js "^1.10.61"
+    prop-types "^15.8.1"
 
 react-photo-gallery@^8.0.0:
   version "8.0.0"

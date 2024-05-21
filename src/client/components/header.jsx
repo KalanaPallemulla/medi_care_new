@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 // import { useLocation } from "react-router-dom";
-import logo from "../assets/images/new_logo.png";
+import logo from "../assets/images/logo_new.png";
 
 // import Dropdown from "react-bootstrap/Dropdown";
 import { useEffect } from "react";
@@ -147,7 +147,7 @@ const Header = () => {
                       <span></span>
                     </span>
                   </Link>
-                  <Link to="/index-2" className="navbar-brand logo">
+                  <Link to="/" className="navbar-brand logo">
                     <img
                       src={logo}
                       className="h-16 bg-red-400 md:w-60 "
@@ -155,9 +155,9 @@ const Header = () => {
                     />
                   </Link>
                 </div>
-                <div>
+                <div className="block sm:block">
                   {userId ? (
-                    <>
+                    <div className="block sm:hidden">
                       <li className="flex flex-row items-center register-btn">
                         <Link
                           to="#"
@@ -201,7 +201,7 @@ const Header = () => {
                           </div>
                         </div>
                       </li>
-                    </>
+                    </div>
                   ) : (
                     <div className="block sm:hidden">
                       <a
