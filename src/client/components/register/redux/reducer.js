@@ -15,7 +15,7 @@ const registerReducer = (state = initialState, { type, payload }) => {
     case types.REGISTER_SUCCESS:
       return {
         ...state,
-        user: payload.user,
+        user: payload,
         isLoading: false,
       };
     case types.REGISTER_FAIL:

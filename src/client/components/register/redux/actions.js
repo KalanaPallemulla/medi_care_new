@@ -6,3 +6,10 @@ export const registerClickAction = (payload) => {
     payload,
   };
 };
+
+export const registerSuccessAction = (payload) => {
+  return {
+    type: types.REGISTER_SUCCESS,
+    payload,
+  };
+};

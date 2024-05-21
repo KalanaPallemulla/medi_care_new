@@ -15,11 +15,11 @@ export const DashboardSidebar = () => {
           <div className="profile-info-widget">
             <Link to="/patient/profile" className="booking-doc-img">
               {profileData.avatar === "" ? (
-                <div className="flex items-center justify-center w-40 h-40">
+                <div className="flex items-center justify-center w-40 h-40 space-x-1">
                   <h1 className="text-4xl ">
-                    {profileData?.firstName.charAt(0).toUpperCase() +
-                      profileData?.lastName.charAt(0).toUpperCase()}
+                    {profileData?.firstName.charAt(0).toUpperCase()}
                   </h1>
+                  <h1>{profileData?.lastName.charAt(0).toUpperCase()}</h1>
                 </div>
               ) : (
                 <img src={profileData.avatar} alt="User Image" />

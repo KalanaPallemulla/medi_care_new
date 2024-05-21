@@ -13,6 +13,7 @@ function* loginHandler(payload) {
     const user = jwtDecode(res.accessToken);
     console.log("user", user);
     localStorage.setItem("userId", user.profile._id);
+    localStorage.setItem("userEmail", JSON.stringify(user.email));
     yield put(loginSuccessAction(res.accessToken));
     callback();
   } else if (res.response.status === 400) {
@@ -29,6 +30,17 @@ function* loginHandler(payload) {
     });
   } else if (res.response.status === 401) {
     toast.error("Invalid credentials", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  } else {
+    toast.error("Please check credentials", {
       position: "bottom-right",
       autoClose: 5000,
       hideProgressBar: false,

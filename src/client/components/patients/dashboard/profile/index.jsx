@@ -22,17 +22,18 @@ const Profile = (props) => {
     firstName: "",
     lastName: "",
     avatar: "wdaw",
-    email: "",
+    email: JSON.parse(localStorage.getItem("userEmail")),
     phoneNumber: "",
     dateOfBirth: "",
     gender: "male",
     country: "",
     passportNumber: "",
+    history: "",
   });
 
   const [emargencyContacts, setEmargencyContacts] = useState([
     {
-      firstName: "yooo",
+      firstName: "",
       lastName: "",
       email: "",
       phoneNumber: "",
@@ -49,6 +50,7 @@ const Profile = (props) => {
     gender,
     country,
     passportNumber,
+    history,
   } = data;
 
   useEffect(() => {
@@ -63,12 +65,16 @@ const Profile = (props) => {
       lastName: profileData?.lastName,
       dateOfBirth: profileData?.dateOfBirth,
       phoneNumber: profileData?.phoneNumber,
-      gender: profileData?.gender,
+      gender: profileData?.gender ? profileData?.gender : "male",
       passportNumber: profileData?.passportNumber,
       country: profileData?.country,
       avatar: profileData?.avatar ? profileData?.avatar : "",
     });
-    if (profileData && profileData.emergencyContact)
+    if (
+      profileData &&
+      profileData.emergencyContact &&
+      profileData.emergencyContact.length > 0
+    )
       setEmargencyContacts(profileData.emergencyContact);
   }, [profileData]);
   console.log("profileData.emergencyContact", profileData.emergencyContact);
@@ -80,6 +86,25 @@ const Profile = (props) => {
     e.preventDefault();
     if (!firstName || !lastName || !dateOfBirth || !phoneNumber || !email) {
       toast.error("Please fill the required fields", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      return;
+    }
+    if (
+      emargencyContacts.length === 0 ||
+      !emargencyContacts[0].firstName ||
+      !emargencyContacts[0].lastName ||
+      !emargencyContacts[0].email ||
+      !emargencyContacts[0].phoneNumber
+    ) {
+      toast.error("Please add at least one emergency contact", {
         position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -148,25 +173,8 @@ const Profile = (props) => {
     <>
       <div>
         <Header {...props} />
-        <div className="breadcrumb-bar-two">
-          <div className="container">
-            <div className="row align-items-center inner-banner">
-              <div className="text-center col-md-12 col-12">
-                <h2 className="breadcrumb-title">Profile Settings</h2>
-                <nav aria-label="breadcrumb" className="page-breadcrumb">
-                  <ol className="breadcrumb">
-                    <li className="breadcrumb-item">
-                      <Link to="/">Home</Link>
-                    </li>
-                    <li className="breadcrumb-item" aria-current="page">
-                      Profile Settings
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
+
+        <div className="pt-20" />
 
         <div className="content">
           <div className="container">
@@ -267,7 +275,7 @@ const Profile = (props) => {
                           />
                         </div>
                       </div>
-                      <div className="col-lg-4 col-md-6">
+                      {/* <div className="col-lg-4 col-md-6">
                         <div className="form-wrap">
                           <label className="col-form-label">
                             Email Address <span className="text-danger">*</span>
@@ -280,7 +288,7 @@ const Profile = (props) => {
                             onChange={handleOnChange}
                           />
                         </div>
-                      </div>
+                      </div> */}
                       <div className="col-lg-4 col-md-6">
                         <div className="form-wrap">
                           <label className="col-form-label">
@@ -319,6 +327,20 @@ const Profile = (props) => {
                             className="form-control"
                             name="country"
                             value={country}
+                            onChange={handleOnChange}
+                          />
+                        </div>
+                      </div>
+                      <div className="col-lg-12 col-md-12">
+                        <div className="form-wrap">
+                          <label className="col-form-label">
+                            Medical History
+                          </label>
+                          <textarea
+                            type="text"
+                            className="form-control"
+                            name="history"
+                            value={history}
                             onChange={handleOnChange}
                           />
                         </div>
@@ -368,7 +390,7 @@ const Profile = (props) => {
                           <div className="col-md-6">
                             <div className="form-wrap">
                               <label className="col-form-label">
-                                email <span className="text-danger">*</span>
+                                Email <span className="text-danger">*</span>
                               </label>
                               <input
                                 type="email"

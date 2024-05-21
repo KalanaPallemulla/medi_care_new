@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 // import { useLocation } from "react-router-dom";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/new_logo.png";
 
 // import Dropdown from "react-bootstrap/Dropdown";
 import { useEffect } from "react";
@@ -81,7 +81,8 @@ const Header = () => {
   let pathnames = window.location.pathname;
 
   // const [active, setActive] = useState(false);
-  const url = pathnames.split("/").slice(0, -1).join("/");
+  const url = pathnames;
+  console.log("url", url);
 
   const onHandleMobileMenu = () => {
     var root = document.getElementsByTagName("html")[0];
@@ -121,8 +122,10 @@ const Header = () => {
     localStorage.removeItem("userId");
     history.push("/login");
   };
+
+  console.log('url.includes("")', url === "/");
   return (
-    <>
+    <div className="bg-red-400">
       {!pathnames.includes("home1") && (
         <header className={`header ${"header-fixed header-one"} `}>
           <div className="container">
@@ -131,21 +134,93 @@ const Header = () => {
                 pathnames.includes("home1") ? "nav-transparent" : ""
               }`}
             >
-              <div className="navbar-header">
-                <Link
-                  to="#0"
-                  id="mobile_btn"
-                  onClick={() => onHandleMobileMenu()}
-                >
-                  <span className="bar-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </span>
-                </Link>
-                <Link to="/index-2" className="navbar-brand logo">
-                  <img src={logo} className="img-fluid" alt="Logo" />
-                </Link>
+              <div className="flex justify-between navbar-header">
+                <div className="space-x-2">
+                  <Link
+                    to="#0"
+                    id="mobile_btn"
+                    onClick={() => onHandleMobileMenu()}
+                  >
+                    <span className="bar-icon">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </span>
+                  </Link>
+                  <Link to="/index-2" className="navbar-brand logo">
+                    <img
+                      src={logo}
+                      className="h-16 bg-red-400 md:w-60 "
+                      alt="Logo"
+                    />
+                  </Link>
+                </div>
+                <div>
+                  {userId ? (
+                    <>
+                      <li className="flex flex-row items-center register-btn">
+                        <Link
+                          to="#"
+                          className="text-white dropdown-toggle nav-link"
+                          data-bs-toggle="dropdown"
+                        >
+                          <span className="user-img">
+                            <img
+                              className="rounded-circle"
+                              src={patient2}
+                              width="31"
+                              alt="Darren Elder"
+                            />
+                          </span>
+                        </Link>
+                        <div className="items-center dropdown-menu dropdown-menu-end">
+                          <div className="flex ">
+                            <div className="avatar avatar-sm">
+                              <img
+                                src={patient2}
+                                alt="User Image"
+                                className="avatar-img rounded-circle"
+                              />
+                            </div>
+                            <div className="user-text">
+                              <h6>{profileData?.firstName}</h6>
+                              <p className="mb-0 text-muted">Available</p>
+                            </div>
+                          </div>
+                          <Link
+                            className="dropdown-item"
+                            to="/patient/dashboard"
+                          >
+                            Dashboard
+                          </Link>
+                          <Link className="dropdown-item" to="/patient/profile">
+                            Profile Settings
+                          </Link>
+                          <div className="dropdown-item" onClick={handleLogout}>
+                            Logout
+                          </div>
+                        </div>
+                      </li>
+                    </>
+                  ) : (
+                    <div className="block sm:hidden">
+                      <a
+                        href="/login"
+                        className="  h-10 bg-[#339999] rounded-md flex items-center px-4 text-base text-white font-medium"
+                      >
+                        Login
+                      </a>
+                    </div>
+                    // <li className="register-btn">
+                    //   <Link to="/login" className="btn btn-primary log-btn">
+                    //     <i>
+                    //       <FeatherIcon icon="lock" />
+                    //     </i>
+                    //     Login
+                    //   </Link>
+                    // </li>
+                  )}
+                </div>
               </div>
               <div className="main-menu-wrapper">
                 <div className="menu-header">
@@ -164,29 +239,33 @@ const Header = () => {
 
                 <ul className={`main-nav`}>
                   <li>
-                    <Link
-                      to="/"
-                      // onClick={() => setMenu(!menu)}
-                      className={`has-submenu ${
-                        url.includes("/index") ? "active" : ""
+                    <a
+                      href="/"
+                      className={` ${
+                        url == "/" ? "text-[#339999]" : "text-white"
                       }`}
                     >
                       Home
-                    </Link>
+                    </a>
                   </li>
 
                   {userId && (
                     <li
-                      className={`has-submenu ${
-                        url.includes("/patient") ? "active" : ""
+                      className={`text-white ${
+                        url.includes("/patient") ? "" : "text-white"
                       }`}
                     >
-                      <Link
-                        to="/patient/dashboard"
-                        className={isSideMenu == "patients" ? "subdrop" : ""}
+                      <a
+                        href="/patient/dashboard"
+                        className={` ${
+                          url == "/patient/dashboard" ||
+                          url == "/patient/profile"
+                            ? "text-[#339999]"
+                            : "text-white"
+                        }`}
                       >
                         Profile
-                      </Link>
+                      </a>
                     </li>
                   )}
                   {pathnames.includes("/index-5") ||
@@ -238,10 +317,10 @@ const Header = () => {
 
                   {userId ? (
                     <>
-                      <li className="register-btn">
+                      <li className="flex flex-row items-center register-btn">
                         <Link
                           to="#"
-                          className="dropdown-toggle nav-link"
+                          className="text-white dropdown-toggle nav-link"
                           data-bs-toggle="dropdown"
                         >
                           <span className="user-img">
@@ -289,7 +368,7 @@ const Header = () => {
           </div>
         </header>
       )}
-    </>
+    </div>
   );
 };
 

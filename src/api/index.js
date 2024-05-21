@@ -31,10 +31,22 @@ export default async function doRequest(
       const response = await axios(options);
       return response.data;
     } catch (error) {
+      console.log("response.response.status", error.response.status);
+
       if (retryCount > 0) {
         console.log(
           `Request failed. Retrying... (Attempts left: ${retryCount})`
         );
+        if (
+          error.response.status === 401 &&
+          url !== "auth/login" &&
+          url !== "auth/register"
+        ) {
+          //how to log out?
+          localStorage.removeItem("userId");
+          window.location.href = "/login";
+          return;
+        }
         return sendRequestWithRetry(retryCount - 1);
       } else {
         console.log(error);

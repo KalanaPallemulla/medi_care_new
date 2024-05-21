@@ -27,6 +27,7 @@ function* updateProfileDataHandler({ payload }) {
   console.log(payload);
   try {
     const res = yield call(updateProfileDataRequest, payload);
+    console.log(res);
     if (res) {
       yield put(updateProfileDataSuccessAction(res));
       toast.success("Profile updated", {

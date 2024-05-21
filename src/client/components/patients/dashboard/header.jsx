@@ -119,21 +119,23 @@ const Header = (props) => {
                   pathnames.includes("home1") ? "nav-transparent" : ""
                 }`}
               >
-                <div className="navbar-header">
-                  <Link
-                    to="#0"
-                    id="mobile_btn"
-                    onClick={() => onHandleMobileMenu()}
-                  >
-                    <span className="bar-icon">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </span>
-                  </Link>
-                  <Link to="/index-2" className="navbar-brand logo">
-                    <img src={logo} className="img-fluid" alt="Logo" />
-                  </Link>
+                <div className="block md:hidden">
+                  <>
+                    <Link
+                      to="#0"
+                      id="mobile_btn"
+                      onClick={() => onHandleMobileMenu()}
+                    >
+                      <span className="bar-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </span>
+                    </Link>
+                    <Link to="/index-2" className="navbar-brand logo">
+                      <img src={logo} className="img-fluid" alt="Logo" />
+                    </Link>
+                  </>
                 </div>
                 <div className="main-menu-wrapper">
                   <div className="menu-header">
@@ -1290,7 +1292,7 @@ const Header = (props) => {
                             </div>
                             <div className="user-text">
                               <h6>Darren Elder</h6>
-                              <p className="text-muted mb-0">Doctor</p>
+                              <p className="mb-0 text-muted">Doctor</p>
                             </div>
                           </div>
                           <Dropdown.Item
@@ -1339,7 +1341,7 @@ const Header = (props) => {
                             </div>
                             <div className="user-text">
                               <h6>Darren Elder</h6>
-                              <p className="text-muted mb-0">Doctor</p>
+                              <p className="mb-0 text-muted">Doctor</p>
                             </div>
                           </div>
                           <Link

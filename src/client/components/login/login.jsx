@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import loginBanner from "../../assets/images/login-banner.png";
+import loginBanner from "../../assets/images/banner-fifteen-ryt.png";
 import { Link } from "react-router-dom";
 import Header from "../header";
 import Footer from "../footer";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { loginAction } from "./redux/actions";
 
@@ -13,6 +13,7 @@ import { loginAction } from "./redux/actions";
 const LoginContainer = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.registerReducer.user);
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -24,7 +25,8 @@ const LoginContainer = (props) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     dispatch(
       loginAction({
         data: data,
@@ -62,9 +64,14 @@ const LoginContainer = (props) => {
                     </div>
                     <div className="col-md-12 col-lg-6 login-right">
                       <div className="login-header">
-                        <h3>
-                          Login <span>Doccure</span>
-                        </h3>
+                        {user && user.firstName ? (
+                          <div>
+                            <h3>Hello {user?.firstName}!</h3>
+                            <h3 className="text-sm">Please Login</h3>
+                          </div>
+                        ) : (
+                          <h3>Login</h3>
+                        )}
                       </div>
                       <form>
                         <div className="form-group form-focus">
@@ -87,44 +94,28 @@ const LoginContainer = (props) => {
                           />
                           <label className="focus-label">Password</label>
                         </div>
-                        <div className="text-end">
+                        {/* <div className="text-end">
                           <Link
                             className="forgot-link"
                             to="/pages/forgot-password"
                           >
                             Forgot Password ?
                           </Link>
-                        </div>
+                        </div> */}
 
                         <div
                           onClick={handleSubmit}
-                          className="btn btn-primary w-100 btn-lg login-btn"
+                          className="btn w-100 btn-lg login-btn bg-[#339999] text-white"
                           type="submit"
                         >
                           Login
                         </div>
-                        <div className="login-or">
-                          <span className="or-line" />
-                          <span className="span-or">or</span>
-                        </div>
-                        <div className="row form-row social-login">
-                          <div className="col-6">
-                            <div
-                              // onClick={notify}
-                              className="btn btn-facebook w-100"
-                            >
-                              <i className="fab fa-facebook-f me-1" /> Login
-                            </div>
-                          </div>
-                          <div className="col-6">
-                            <Link to="/index" className="btn btn-google w-100">
-                              <i className="fab fa-google me-1" /> Login
-                            </Link>
-                          </div>
-                        </div>
-                        <div className="text-center dont-have">
+
+                        <div className="mt-4 text-sm text-center text-[#111827]">
                           Don’t have an account?{" "}
-                          <Link to="/register">Register</Link>
+                          <a className="text-[#1F3266]" href="/register">
+                            Register
+                          </a>
                         </div>
                       </form>
                     </div>

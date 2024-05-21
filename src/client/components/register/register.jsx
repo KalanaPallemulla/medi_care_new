@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 // import loginBanner from "../../assets/images/login-banner.png";
-import loginBanner from "../../assets/images/login-banner.png";
+import loginBanner from "../../assets/images/banner-1.png";
 import Header from "../header";
 import Footer from "../footer";
 import { useDispatch } from "react-redux";
 import { registerClickAction } from "./redux/actions";
 import { toast } from "react-toastify";
+
+const passwordRegex =
+  /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&.,-/^])[A-Za-z\d@$!%*?&.,-/^]+$/;
 
 const Register = (props) => {
   const history = useHistory();
@@ -59,10 +62,19 @@ const Register = (props) => {
       errorTost("Confirm password is reuqired");
       return;
     }
+
     if (password !== confirmPassword) {
       errorTost("Passwords do not match");
       return;
     }
+
+    if (!passwordRegex.test(password)) {
+      errorTost(
+        "Passwords must contain at least number special character and uppercase letter"
+      );
+      return;
+    }
+
     try {
       dispatch(
         registerClickAction({
@@ -180,7 +192,7 @@ const Register = (props) => {
                         </div>
                         <div
                           // to="/patient/patientregisterstep-1"
-                          className="btn btn-primary w-100 btn-lg login-btn"
+                          className="btn bg-[#339999] hover:bg-[#339999] text-white w-100 btn-lg login-btn"
                           // type="submit"
                           onClick={handleSubmit}
                         >
