@@ -175,7 +175,7 @@ const Header = () => {
                           </span>
                         </Link>
                         <div className="items-center dropdown-menu dropdown-menu-end">
-                          <div className="flex ">
+                          {/* <div className="flex ">
                             <div className="avatar avatar-sm">
                               <img
                                 src={patient2}
@@ -187,7 +187,7 @@ const Header = () => {
                               <h6>{profileData?.firstName}</h6>
                               <p className="mb-0 text-muted">Available</p>
                             </div>
-                          </div>
+                          </div> */}
                           <Link
                             className="dropdown-item"
                             to="/patient/dashboard"
@@ -334,7 +334,7 @@ const Header = () => {
                           </span>
                         </Link>
                         <div className="items-center dropdown-menu dropdown-menu-end">
-                          <div className="flex ">
+                          {/* <div className="flex ">
                             <div className="avatar avatar-sm">
                               <img
                                 src={patient2}
@@ -346,7 +346,7 @@ const Header = () => {
                               <h6>{profileData?.firstName}</h6>
                               <p className="mb-0 text-muted">Available</p>
                             </div>
-                          </div>
+                          </div> */}
                           <Link
                             className="dropdown-item"
                             to="/patient/dashboard"
@@ -356,9 +356,16 @@ const Header = () => {
                           <Link className="dropdown-item" to="/patient/profile">
                             Profile Settings
                           </Link>
-                          <div className="dropdown-item" onClick={handleLogout}>
+                          {/* <div className="dropdown-item" onClick={handleLogout}>
                             Logout
-                          </div>
+                          </div> */}
+                          <Link
+                            className="dropdown-item"
+                            to="#"
+                            onClick={handleLogout}
+                          >
+                            Logout
+                          </Link>
                         </div>
                       </li>
                     </>

@@ -53,8 +53,7 @@ function Faq() {
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        Can i make an Appointment Online with White Plains
-                        Hospital Kendi?
+                        Can i make an Appointment Online with ..........
                       </Link>
                     </h2>
                     <div
@@ -86,8 +85,7 @@ function Faq() {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Can i make an Appointment Online with White Plains
-                        Hospital Kendi?
+                        Can i make an Appointment Online with ..........
                       </Link>
                     </h2>
                     <div
@@ -119,8 +117,7 @@ function Faq() {
                         aria-expanded="false"
                         aria-controls="collapseThree"
                       >
-                        Can i make an Appointment Online with White Plains
-                        Hospital Kendi?
+                        Can i make an Appointment Online with ..........
                       </Link>
                     </h2>
                     <div
@@ -152,8 +149,7 @@ function Faq() {
                         aria-expanded="false"
                         aria-controls="collapseFour"
                       >
-                        Can i make an Appointment Online with White Plains
-                        Hospital Kendi?
+                        Can i make an Appointment Online with ..........
                       </Link>
                     </h2>
                     <div
@@ -185,8 +181,7 @@ function Faq() {
                         aria-expanded="false"
                         aria-controls="collapseFive"
                       >
-                        Can i make an Appointment Online with White Plains
-                        Hospital Kendi?
+                        Can i make an Appointment Online with ..........
                       </Link>
                     </h2>
                     <div
