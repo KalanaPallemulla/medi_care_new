@@ -25,7 +25,7 @@ const Feedback = () => {
               <div className="feedback-main-content">
                 <h2>
                   Download <br />
-                  The Doccure App Today!
+                  The AMPLEXO App Today!
                 </h2>
                 <p>
                   Rasakan kemudahan pembayaran melalui aplikasi SmartInPays.

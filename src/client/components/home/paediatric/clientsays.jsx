@@ -66,7 +66,8 @@ const Clientsays = () => {
       <section className="client-us-section-thirteen common-padding">
         <div
           className="client-us-section-thirteenone aos"
-          data-aos="fade-right">
+          data-aos="fade-right"
+        >
           <img src={cloud_2} alt="#" />
           <img src={rainbow_2} alt="#" />
         </div>
@@ -86,7 +87,7 @@ const Clientsays = () => {
               <div className="client-says-all">
                 <div className="clients-says-content">
                   <p>
-                    "I would like to thank everyone at Doccure for the fantastic
+                    "I would like to thank everyone at AMPLEXO for the fantastic
                     way you looked after me. I could not fault anyone during the
                     time I spent with you - from the point I arrived in
                     reception, to the catering team and every member of staff
@@ -108,7 +109,7 @@ const Clientsays = () => {
               <div className="client-says-all">
                 <div className="clients-says-content">
                   <p>
-                    "I would like to thank everyone at Doccure for the fantastic
+                    "I would like to thank everyone at AMPLEXO for the fantastic
                     way you looked after me. I could not fault anyone during the
                     time I spent with you - from the point I arrived in
                     reception, to the catering team and every member of staff
@@ -130,7 +131,7 @@ const Clientsays = () => {
               <div className="client-says-all">
                 <div className="clients-says-content">
                   <p>
-                    "I would like to thank everyone at Doccure for the fantastic
+                    "I would like to thank everyone at AMPLEXO for the fantastic
                     way you looked after me. I could not fault anyone during the
                     time I spent with you - from the point I arrived in
                     reception, to the catering team and every member of staff

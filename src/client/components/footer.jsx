@@ -47,12 +47,12 @@ const Footer = (props) => {
                       <div className="copyright-text">
                         <p className="mb-0">
                           {" "}
-                          Copyright © 2023{" "}
+                          Copyright © 2024{" "}
                           <Link
-                            to="https://themeforest.net/user/dreamguys/portfolio"
-                            target="_blank"
+                            to="#"
+                            // target="_blank"
                           >
-                            Dreamguys.
+                            AMPLEXO.
                           </Link>{" "}
                           All Rights Reserved
                         </p>

@@ -157,7 +157,7 @@ const Footer = (props) => {
                         </p>
                         <p className="mb-0">
                           <i className="fa fa-envelope" aria-hidden="true"></i>
-                          doccure@example.com
+                          amplexo@example.com
                         </p>
                       </div>
                     </div>
@@ -214,7 +214,7 @@ const Footer = (props) => {
                     <div className="col-md-6 col-lg-6">
                       <div className="copyright-text">
                         <p className="mb-0">
-                          &copy; 2020 Doccure. All rights reserved.
+                          &copy; 2020 AMPLEXO. All rights reserved.
                         </p>
                       </div>
                     </div>

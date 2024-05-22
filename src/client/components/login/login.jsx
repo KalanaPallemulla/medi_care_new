@@ -59,7 +59,7 @@ const LoginContainer = (props) => {
                       <img
                         src={loginBanner}
                         className="img-fluid"
-                        alt="Doccure Login"
+                        alt="AMPLEXO Login"
                       />
                     </div>
                     <div className="col-md-12 col-lg-6 login-right">

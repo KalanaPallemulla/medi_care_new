@@ -157,7 +157,7 @@ const Footer = () => {
                       <input
                         type="email"
                         className="form-control"
-                        placeholder="Doccure@example.com"
+                        placeholder="amplexo@example.com"
                       />
                       <button type="submit" className="btn">
                         Subscribe
