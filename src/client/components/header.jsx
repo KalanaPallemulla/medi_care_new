@@ -149,6 +149,7 @@ const Header = () => {
                   </Link>
                   <Link to="/" className="navbar-brand logo">
                     <img
+                      style={{ height: "3.5rem" }}
                       src={logo}
                       className="h-16 bg-red-400 md:w-60 "
                       alt="Logo"
@@ -238,7 +239,7 @@ const Header = () => {
                 </div>
 
                 <ul className={`main-nav`}>
-                  <li>
+                  {/* <li>
                     <a
                       href="/"
                       className={` ${
@@ -247,9 +248,9 @@ const Header = () => {
                     >
                       Home
                     </a>
-                  </li>
+                  </li> */}
 
-                  {userId && (
+                  {/* {userId && (
                     <li
                       className={`text-white ${
                         url.includes("/patient") ? "" : "text-white"
@@ -267,7 +268,7 @@ const Header = () => {
                         Profile
                       </a>
                     </li>
-                  )}
+                  )} */}
                   {pathnames.includes("/index-5") ||
                   pathnames.includes("/index-11") ? (
                     <li className="searchbar">
