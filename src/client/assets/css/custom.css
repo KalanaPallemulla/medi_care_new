@@ -20,6 +20,10 @@
   -webkit-flex-wrap: wrap;
 }
 
+.react-international-phone-input {
+  width: -webkit-fill-available !important;
+}
+
 .css-equal-content {
   color: red;
   float: left;

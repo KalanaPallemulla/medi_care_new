@@ -288,7 +288,7 @@ const Profile = (props) => {
                             onChange={handleOnChange}
                           /> */}
                           <PhoneInput
-                            defaultCountry="ua"
+                            defaultCountry="lk"
                             value={phoneNumber}
                             onChange={(phone) =>
                               setData({ ...data, phoneNumber: phone })
