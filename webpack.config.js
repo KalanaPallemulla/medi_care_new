@@ -18,7 +18,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
-    port: 3001,
+    port: 3000,
     historyApiFallback: true,
     onAfterSetupMiddleware() {
       opn(`${this.port}`);
