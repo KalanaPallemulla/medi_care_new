@@ -20,6 +20,10 @@
   -webkit-flex-wrap: wrap;
 }
 
+.react-international-phone-input {
+  width: -webkit-fill-available !important;
+}
+
 .css-equal-content {
   color: red;
   float: left;
@@ -6391,7 +6395,7 @@ th.table-head-days {
 }
 .header-one .main-menu-wrapper .main-nav li .btn.log-btn-active {
   min-width: 87px;
-  color: red;
+  color: #339999;
   background-color: #ffffff;
   border: 1px solid #339999;
   box-shadow: inset 0 0 0 50px #ffffff;
