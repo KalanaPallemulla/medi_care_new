@@ -59,7 +59,7 @@ const LoginContainer = (props) => {
                       <img
                         src={loginBanner}
                         className="img-fluid"
-                        alt="AMPLEXO Login"
+                        alt="Doccure Login"
                       />
                     </div>
                     <div className="col-md-12 col-lg-6 login-right">
@@ -74,25 +74,29 @@ const LoginContainer = (props) => {
                         )}
                       </div>
                       <form>
-                        <div className="form-group form-focus">
-                          <input
-                            type="email"
-                            className="form-control floating"
-                            name="email"
-                            value={email}
-                            onChange={handleOnChange}
-                          />
-                          <label className="focus-label">Email</label>
+                        <div className="col-lg-12 col-md-12">
+                          <div className="form-wrap">
+                            <label className="col-form-label">Email</label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              name="email"
+                              value={email}
+                              onChange={handleOnChange}
+                            />
+                          </div>
                         </div>
-                        <div className="form-group form-focus">
-                          <input
-                            type="password"
-                            className="form-control floating"
-                            name="password"
-                            value={password}
-                            onChange={handleOnChange}
-                          />
-                          <label className="focus-label">Password</label>
+                        <div className="col-lg-12 col-md-12">
+                          <div className="form-wrap">
+                            <label className="col-form-label">Password</label>
+                            <input
+                              type="password"
+                              className="form-control"
+                              name="password"
+                              value={password}
+                              onChange={handleOnChange}
+                            />
+                          </div>
                         </div>
                         {/* <div className="text-end">
                           <Link
@@ -105,7 +109,7 @@ const LoginContainer = (props) => {
 
                         <div
                           onClick={handleSubmit}
-                          className="btn w-100 btn-lg login-btn bg-[#339999] text-white hover:border hover:border-[#339999]  hover:bg-[#33999990] "
+                          className="btn w-100 btn-lg login-btn bg-[#339999] text-white hover:border hover:border-[#339999]  hover:bg-[#33999995] "
                           type="submit"
                         >
                           Login

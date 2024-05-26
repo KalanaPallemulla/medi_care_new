@@ -20,6 +20,12 @@ const Register = (props) => {
     email: "",
     password: "",
   });
+  const [firstnameError, setFirstNameError] = useState("");
+  const [lastnameError, setLastNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [confirmPasswordError, setConfirmPasswordError] = useState("");
+  const [passwordsNotMatchedError, setPasswordsNotMatchedError] = useState("");
 
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -42,36 +48,84 @@ const Register = (props) => {
   };
 
   const handleSubmit = () => {
+    let isError = false;
     if (!firstName) {
-      errorTost("First name is reuqired");
-      return;
+      // errorTost("First name is reuqired");
+      setFirstNameError("First name is required");
+      // return;
+      isError = true;
+    } else {
+      setFirstNameError("");
+      isError = false;
     }
     if (!lastName) {
-      errorTost("Last name is reuqired");
-      return;
+      // errorTost("Last name is reuqired");
+      setLastNameError("Last name is required");
+      // return;
+      isError = true;
+    } else {
+      setLastNameError("");
+      isError = false;
     }
     if (!email) {
-      errorTost("Email is reuqired");
-      return;
+      // errorTost("Email is reuqired");
+      setEmailError("Email is required");
+      // return;
+      isError = true;
+    } else {
+      setEmailError("");
+      isError = false;
     }
     if (!password) {
-      errorTost("Password is reuqired");
-      return;
+      // errorTost("Password is reuqired");
+      setPasswordError("Passowrd is required");
+      // return;
+      isError = true;
+    } else {
+      setPasswordError("");
+      isError = false;
+    }
+    if (!passwordRegex.test(password)) {
+      setPasswordError(
+        "Passwords must contain at least number special character and uppercase letter"
+      );
+      // return;
+      isError = true;
+    } else {
+      setPasswordError("");
+      isError = false;
     }
     if (!confirmPassword) {
-      errorTost("Confirm password is reuqired");
-      return;
+      // errorTost("Confirm password is reuqired");
+      setConfirmPasswordError("Confirm Password is required");
+      // return;
+      isError = true;
+    } else {
+      setConfirmPasswordError("");
+      isError = false;
     }
 
     if (password !== confirmPassword) {
-      errorTost("Passwords do not match");
-      return;
+      // errorTost("Passwords do not match");
+      setPasswordsNotMatchedError("Passwords do not match");
+      // return;
+      isError = true;
+    } else {
+      setPasswordsNotMatchedError("");
+      isError = false;
     }
 
     if (!passwordRegex.test(password)) {
-      errorTost(
+      setPasswordError(
         "Passwords must contain at least number special character and uppercase letter"
       );
+      isError = true;
+    } else {
+      setPasswordError("");
+      isError = false;
+    }
+
+    if (isError) {
       return;
     }
 
@@ -93,6 +147,7 @@ const Register = (props) => {
     return () => document.body.classList.remove("account-page");
   }, []);
 
+  const error = true;
   return (
     <>
       <Header {...props} />
@@ -124,66 +179,110 @@ const Register = (props) => {
                       </div>
                       {/* Register Form */}
                       <form>
-                        <div className="form-group form-focus">
-                          <input
-                            type="text"
-                            className="form-control floating"
-                            name="firstName"
-                            value={firstName}
-                            onChange={onChangeHandler}
-                          />
-                          <label className="focus-label">
-                            First Name <span className="text-danger">*</span>
-                          </label>
+                        <div className="col-lg-12 col-md-12">
+                          <div className="form-wrap">
+                            <label className="col-form-label">First name</label>
+                            <input
+                              type="text"
+                              className={` form-control ${
+                                firstnameError.length > 0
+                                  ? "form-control-error"
+                                  : ""
+                              }`}
+                              name="firstName"
+                              value={firstName}
+                              onChange={onChangeHandler}
+                            />
+                            <div className="text-[12px] italic text-red-400 ">
+                              {firstnameError}
+                            </div>
+                          </div>
                         </div>
-                        <div className="form-group form-focus">
-                          <input
-                            type="text"
-                            className="form-control floating"
-                            name="lastName"
-                            value={lastName}
-                            onChange={onChangeHandler}
-                          />
-                          <label className="focus-label">
-                            Last Name <span className="text-danger">*</span>
-                          </label>
+                        <div className="col-lg-12 col-md-12">
+                          <div className="form-wrap">
+                            <label className="col-form-label">Last name</label>
+                            <input
+                              type="text"
+                              className={` form-control ${
+                                lastnameError.length > 0
+                                  ? "form-control-error"
+                                  : ""
+                              }`}
+                              name="lastName"
+                              value={lastName}
+                              onChange={onChangeHandler}
+                            />
+                            <div className="text-[12px] italic text-red-400 ">
+                              {lastnameError}
+                            </div>
+                          </div>
                         </div>
-                        <div className="form-group form-focus">
-                          <input
-                            type="text"
-                            className="form-control floating"
-                            name="email"
-                            value={email}
-                            onChange={onChangeHandler}
-                          />
-                          <label className="focus-label">
-                            Email address <span className="text-danger">*</span>
-                          </label>
+                        <div className="col-lg-12 col-md-12">
+                          <div className="form-wrap">
+                            <label className="col-form-label">Email</label>
+                            <input
+                              type="text"
+                              className={` form-control ${
+                                emailError.length > 0
+                                  ? "form-control-error"
+                                  : ""
+                              }`}
+                              name="email"
+                              value={email}
+                              onChange={onChangeHandler}
+                            />
+                            <div className="text-[12px] italic text-red-400 ">
+                              {emailError}
+                            </div>
+                          </div>
                         </div>
 
-                        <div className="form-group form-focus">
-                          <input
-                            type="password"
-                            className="form-control floating"
-                            name="password"
-                            value={password}
-                            onChange={onChangeHandler}
-                          />
-                          <label className="focus-label">
-                            Password <span className="text-danger">*</span>
-                          </label>
+                        <div className="col-lg-12 col-md-12">
+                          <div className="form-wrap">
+                            <label className="col-form-label">Password</label>
+                            <input
+                              type="password"
+                              className={` form-control ${
+                                passwordError.length > 0 ||
+                                passwordsNotMatchedError.length > 0
+                                  ? "form-control-error"
+                                  : ""
+                              }`}
+                              name="password"
+                              value={password}
+                              onChange={onChangeHandler}
+                            />
+                            <div className="text-[12px] italic text-red-400 ">
+                              {passwordError}
+                            </div>
+                            <div className="text-[12px] italic text-red-400 ">
+                              {passwordsNotMatchedError}
+                            </div>
+                          </div>
                         </div>
-                        <div className="form-group form-focus">
-                          <input
-                            type="password"
-                            className="form-control floating"
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                          />
-                          <label className="focus-label">
-                            Confirm Password{" "}
-                            <span className="text-danger">*</span>
-                          </label>
+                        <div className="col-lg-12 col-md-12">
+                          <div className="form-wrap">
+                            <label className="col-form-label">
+                              Confirm Password
+                            </label>
+                            <input
+                              type="password"
+                              className={` form-control ${
+                                confirmPasswordError.length > 0 ||
+                                passwordsNotMatchedError.length > 0
+                                  ? "form-control-error"
+                                  : ""
+                              }`}
+                              name="confirmPassword"
+                              value={confirmPassword}
+                              onChange={(e) =>
+                                setConfirmPassword(e.target.value)
+                              }
+                            />
+                            <div className="text-[12px] italic text-red-400 ">
+                              {confirmPasswordError}
+                            </div>
+                          </div>
                         </div>
                         <div className="text-end">
                           <Link className="forgot-link" to="/login">

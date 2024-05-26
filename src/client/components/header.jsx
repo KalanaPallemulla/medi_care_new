@@ -149,7 +149,7 @@ const Header = () => {
                   </Link>
                   <Link to="/" className="navbar-brand logo">
                     <img
-                      style={{ height: "3.5rem" }}
+                      style={{ height: "2 rem" }}
                       src={logo}
                       className="h-16 bg-red-400 md:w-60 "
                       alt="Logo"
@@ -204,13 +204,30 @@ const Header = () => {
                       </li>
                     </div>
                   ) : (
-                    <div className="block sm:hidden">
-                      <a
-                        href="/login"
-                        className="  h-10 bg-[#339999] rounded-md flex items-center px-4 text-base text-white font-medium"
-                      >
-                        Login
-                      </a>
+                    <div className="block sm:hidden ">
+                      {/* bg-[#339999] */}
+                      <div className="flex space-x-4">
+                        <a
+                          href="/register"
+                          className={`flex items-center h-10 text-base font-medium  rounded-md ${
+                            url == "/register"
+                              ? "bg-white text-[#339999]"
+                              : "bg-[#339999] text-white"
+                          }  px-2 w-20 justify-center`}
+                        >
+                          Register
+                        </a>
+                        <a
+                          href="/login"
+                          className={`flex items-center h-10 text-base font-medium  rounded-md ${
+                            url == "/login"
+                              ? "bg-white text-[#339999]"
+                              : "bg-[#339999] text-white"
+                          }  px-2 w-20 justify-center`}
+                        >
+                          Login
+                        </a>
+                      </div>
                     </div>
                     // <li className="register-btn">
                     //   <Link to="/login" className="btn btn-primary log-btn">
@@ -297,7 +314,14 @@ const Header = () => {
                     <>
                       <>
                         <li className="register-btn">
-                          <Link to="/register" className="btn reg-btn">
+                          <Link
+                            to="/register"
+                            className={` ${
+                              url == "/register"
+                                ? "btn btn-primary log-btn-active"
+                                : "btn btn-primary log-btn"
+                            }`}
+                          >
                             <i>
                               <FeatherIcon icon="user" />
                             </i>
@@ -305,7 +329,14 @@ const Header = () => {
                           </Link>
                         </li>
                         <li className="register-btn">
-                          <Link to="/login" className="btn btn-primary log-btn">
+                          <Link
+                            to="/login"
+                            className={` ${
+                              url == "/login"
+                                ? "btn btn-primary log-btn-active"
+                                : "btn btn-primary log-btn"
+                            }`}
+                          >
                             <i>
                               <FeatherIcon icon="lock" />
                             </i>

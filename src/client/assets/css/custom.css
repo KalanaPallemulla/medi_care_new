@@ -229,6 +229,7 @@
 .header.header-ten .main-menu-wrapper .main-nav li .btn.reg-btn,
 .header-one .main-menu-wrapper .main-nav .register-btn,
 .header-one .main-menu-wrapper .main-nav li .btn.log-btn,
+.header-one .main-menu-wrapper .main-nav li .btn.log-btn-active,
 .header-one .main-menu-wrapper .main-nav li .btn.reg-btn,
 .header.custom .header-navbar-rht.right-menu .header-contact-img i,
 .header .header-nav,
@@ -1407,6 +1408,15 @@ button:focus {
   font-size: 14px;
 }
 
+.form-control-error {
+  border-color: #ff0000; /* Red border color for error */
+}
+.form-control-error:focus {
+  border-color: #ff0000; /* Red border color for error */
+  box-shadow: none;
+  outline: 0 none;
+}
+
 .table .form-control {
   font-size: 14px;
   min-height: 38px;
@@ -1662,6 +1672,7 @@ p:last-child  {
 .header.header-ten .main-menu-wrapper .main-nav li .btn.reg-btn,
 .header-one .main-menu-wrapper .main-nav .register-btn,
 .header-one .main-menu-wrapper .main-nav li .btn.log-btn,
+.header-one .main-menu-wrapper .main-nav li .btn.log-btn-active,
 .header-one .main-menu-wrapper .main-nav li .btn.reg-btn,
 .header.custom .header-navbar-rht.right-menu .header-contact-img i,
 .header .header-nav,
@@ -6378,8 +6389,9 @@ th.table-head-days {
   -ms-transition: 0.7s;
   transition: 0.7s;
 }
-.header-one .main-menu-wrapper .main-nav li .btn.log-btn:hover {
-  color: #339999;
+.header-one .main-menu-wrapper .main-nav li .btn.log-btn-active {
+  min-width: 87px;
+  color: red;
   background-color: #ffffff;
   border: 1px solid #339999;
   box-shadow: inset 0 0 0 50px #ffffff;
